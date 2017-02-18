@@ -26,7 +26,7 @@ def animate2(i):
 	
 	x = np.linspace(0, 2, 1000)
 	if i/50%2 == 0:
-		y = np.sin(2*np.pi * (x/2 - 1*factor * i))
+		y = np.exp(-x)*np.sin(2*np.pi * (x/2 - 1*factor * i))
 	elif i/50%2 == 1:
 		y = np.sin(2*np.pi * (x + 2*factor * i))
 	line.set_data(x, y)
