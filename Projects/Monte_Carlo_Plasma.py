@@ -42,5 +42,4 @@ def animate(i):
     return line,
 
 anim = animation.FuncAnimation(fig, animate, init_func=init, frames=500, interval=20, blit=True)
-#plt.show()
-anim.save('Monte_Carlo_Plasma.mp4', fps=30, extra_args = ['-vcodec','libx264'])
+plt.show()

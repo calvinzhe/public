@@ -5,10 +5,10 @@ import matplotlib
 matplotlib.use("Agg")
 from matplotlib import animation, pyplot as plt
 
-FFMpegWriter = animation.writers['libx264']
+writerClass = animation.ImageMagickFileWriter
 metadata = dict(title='Monte Carlo Plasma', artist='Calvin He',
 comment='Physics + Statistics + Computation!')
-writer = FFMpegWriter(fps=30, bitrate=-1, metadata=metadata)
+writer = writerClass(fps=30, metadata=metadata)
 
 N = 50000
 
@@ -38,7 +38,7 @@ line, = plt.plot([], [], 'r,', alpha=0.25)
 plt.xlim((-2, 2))
 plt.ylim((-2, 2))
 
-with writer.saving(fig, "./Monte_Carlo_Plasma.mp4", 100):
+with writer.saving(fig, "Monte_Carlo_Plasma1.mp4", 100):
 	for i in range(500):
 		vector = UniformCircularMotion2dFunc(i)
 		line.set_data(vector[0], vector[1])
