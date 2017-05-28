@@ -31,6 +31,7 @@ fig.suptitle("Simple Harmonic Oscillation")
 # Position Animation:
 ax0 = fig.add_subplot(321)
 point, = ax0.plot(0,A,'go')
+zline0 = ax0.plot([-1,1],[0,0])
 ax0.set_xlim(-1,1)
 ax0.set_ylim(-A,A)
 ax0.set_xlabel("x (m)")
@@ -57,6 +58,7 @@ if vectors:
 # Position Graph:
 ax1 = fig.add_subplot(323)
 liney, = ax1.plot([],[])
+zline1 = ax1.plot([-1,1],[0,0])
 ax1.set_xlim(-1,1)
 ax1.set_ylim(-A,A)
 ax1.set_xlabel("t - t_present (s)")
@@ -66,6 +68,7 @@ ax1.set_title("y position in time")
 # Velocity Graph:
 ax2 = fig.add_subplot(325)
 linev, = ax2.plot([],[])
+zline2 = ax2.plot([-1,1],[0,0])
 ax2.set_xlim(-1,1)
 ax2.set_ylim(-A*w,A*w)
 ax2.set_xlabel("t - t_present (s)")

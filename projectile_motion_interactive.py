@@ -4,6 +4,7 @@ from matplotlib.widgets import Slider, Button
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
+ax.set_aspect('equal')
 fig.subplots_adjust(bottom=0.30)
 
 #Set up the time domain and initial conditions:
@@ -31,12 +32,12 @@ vvec = ax.quiver(0,0,v0*np.cos(theta0),v0*np.sin(theta0),scale=20,scale_units='x
 toftext = ax.text(0.01,0.95, "Time of Flight: "+str(round(tof(v0,theta0),2))+" s")
 ymtext = ax.text(xrang(v0,theta0)/2-0.075,ymax(v0,theta0)+0.05,"ymax = "+str(round(ymax(v0,theta0)))+" m")
 xrtext = ax.text(xrang(v0,theta0), 0.025,"xrange = "+str(round(xrang(v0,theta0),2))+" m")
-kepmtext = ax.text(0.01, -0.45, "Initial KE/mass: "+str(round(0.5*v0**2,2))+" J/kg")
-mpepmtext = ax.text(0.50, -0.45, "Max PE/mass: "+str(round(9.8*ymax(v0,theta0),2))+" J/kg")
+kepmtext = ax.text(0.01, 0.85, "Initial KE/mass: "+str(round(0.5*v0**2,2))+" J/kg")
+mpepmtext = ax.text(0.01, 0.80, "Max PE/mass: "+str(round(9.8*ymax(v0,theta0),2))+" J/kg")
 
 #Define plot properties:
 ax.set_title("Projectile Motion")
-ax.set_xlim([0,1])
+ax.set_xlim([0,2])
 ax.set_ylim([0,1])
 ax.set_xlabel("x (m)")
 ax.set_ylabel("y (m)")
